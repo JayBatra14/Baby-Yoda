@@ -47,13 +47,13 @@ def sendEmail(to,content):
     server = smtplib.SMTP('smtp.gmail.com', 587) 
     server.ehlo()
     server.starttls()
-    server.login('jatinbatra.aec.cs16@sgei.org','Webster1@')
-    server.sendmail('jatinbatra.aec.cs16@sgei.org',to,content)
+    server.login('yourid','password')
+    server.sendmail('yourid',to,content)
     server.close()
 
 if __name__ == "__main__":
     wishMe()
-    contacts={"self":"+919557637442","tanvi":"+918791409403","ritu":"+919634100837","harsh":"+917895775440","himanshu":"+919720811328","deep":"7500196993"}
+    contacts={"self":"your_phone_number"}
     while(1):
         query = takeCommand().lower()
         if 'wikipedia' in query:
@@ -99,7 +99,7 @@ if __name__ == "__main__":
             speak(f"Sir, the time is {strTime}")
 
         elif 'open code' in query:
-            codepath="C:\\Users\\Jatin Batra\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+            codepath="Code.exe"
             os.startfile(codepath)
         
         elif 'whatsapp' in query:
@@ -108,13 +108,13 @@ if __name__ == "__main__":
             if name in contacts:
                 speak('What should I say')
                 content=takeCommand()
-                account_sid = 'AC627c5296ab9949b1184dcb5eaa6a61fc' 
-                auth_token = '94c45c7f451e2132e3046c399817921a' 
+                account_sid = 'your_sid' 
+                auth_token = 'your_token' 
                 client = Client(account_sid, auth_token) 
  
                 client.messages.create( 
                               body=content, 
-                              from_='whatsapp:+14155238886',      
+                              from_='whatsapp:your_twilio_number',      
                               to='whatsapp:' +contacts[name] 
                           ) 
             else:
@@ -143,7 +143,7 @@ if __name__ == "__main__":
             try:
                 speak('What should I say')
                 content=takeCommand()
-                to="jatin.batra92@gmail.com"
+                to="youremail@gmail.com"
                 sendEmail(to,content)
                 speak("Email has been sent")
             except Exception as e:
