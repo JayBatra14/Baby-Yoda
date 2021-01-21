@@ -28,9 +28,9 @@ searchButton.click()
 """
 flipkart
 username = driver.find_element_by_xpath('/html/body/div[2]/div/div/div/div/div[2]/div/form/div[1]/input')
-username.send_keys('9557637442')
+username.send_keys('Your_username')
 password = driver.find_element_by_xpath('/html/body/div[2]/div/div/div/div/div[2]/div/form/div[2]/input')
-password.send_keys('Webster1@')
+password.send_keys('Your_password')
 login = driver.find_element_by_xpath('/html/body/div[2]/div/div/div/div/div[2]/div/form/div[3]/button')
 login.click()
 searchbox = driver.find_element_by_xpath('//*[@id="container"]/div/div[1]/div[1]/div[2]/div[2]/form/div/div/input')
